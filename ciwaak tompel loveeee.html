@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine Ciwaaa</title>
+    <style>
+        body {
+            background-color: #ffd0cc;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            color: #ff4d4d;
+            margin-top: 50px;
+        }
+        p {
+            color: #cc0000;
+            font-size: 18px;
+        }
+        .heart {
+            position: absolute;
+            color: rgb(255, 38, 0);
+            font-size: 20px;
+            animation: fall 4s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        img {
+            width: 120px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Valentine’s Day Ciwaaa 🧸💐❤️</h1>
+    <p>GUD MOURNINGSSS CIWAAA CANTIKKK YANG LUCUU,, JANGAN LUPA SARAPANN YAAAAA BIAR GA SAKITT, TAPI KALAU CIWAA PUASA YAA JANGAN MAKAN NTAR BATALLL!!!! PELUKK JAUHHH DARI DITTYYyy,  You make my world brighter and my heart warmer. Love you always! ☀️🌈💕</p>
+    
+    <img src="ciwak.jpg" alt="Valentine Image">
+    <img src="CIWOK.jpg" alt="Valentine Image">
+    <img src="WAK.jpg" alt="Valentine Image">
+    <img src="WI7.jpg" alt="Valentine Image">
+    <img src="as.jpg" alt="Valentine Image">
+    <img src="as2.jpg" alt="Valentine Image">
+    <img src="as3.jpg" alt="Valentine Image">
+    <img src="ass.jpg" alt="Valentine Image">
+    <img src="as6.jpg" alt="Valentine Image">
+    <img src="as7.jpg" alt="Valentine Image">
+    
+    <!-- Elemen audio untuk musik -->
+    <audio id="bg-music" loop style="display: none;">
+        <source src="okeee.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Tempelkan kode berikut tepat sebelum tag </body> -->
+    <div id="play-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(11, 3, 3, 0.5); display: flex; justify-content: center; align-items: center; z-index: 1000;">
+        <button id="play-button" style="padding: 20px 40px; font-size: 20px; cursor: pointer;">PENCETT WAKK</button>
+    </div>
+    <script>
+        document.getElementById('play-button').addEventListener('click', function() {
+          var audio = document.querySelector("audio");
+          audio.play().then(function() {
+            // Jika audio berhasil diputar, sembunyikan overlay
+            document.getElementById('play-overlay').style.display = 'none';
+          }).catch(function(error) {
+            console.error("Error playing audio:", error);
+          });
+        });
+    </script>
+    
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "💐🧸❤️‍🔥😜💞💗💕";
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 300 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }
+        setInterval(createHeart,123);
+    </script>
+    
+    <!-- Script tambahan untuk memastikan musik diputar setelah interaksi pengguna -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            var audio = document.querySelector("audio");
+            // Jika browser memblokir autoplay, musik akan mulai saat pengguna klik halaman.
+            document.addEventListener("click", function(){
+                if(audio.paused){
+                    audio.play().catch(function(e){
+                        console.log("Terjadi kesalahan saat memutar audio:", e);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
